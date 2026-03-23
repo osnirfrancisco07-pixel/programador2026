@@ -1,0 +1,127 @@
+body{
+margin:0;
+padding:0;
+}
+
+section{
+max-width:500px;
+box-shadow:2px 2px 7px gray;
+margin:auto;
+padding:50px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+margin-bottom:15px;
+
+animation:animar alternate infinite 3s;
+}
+
+/* animação */
+
+@keyframes animar{
+
+0%{box-shadow:3px 3px 7px red;}
+25%{box-shadow:3px 3px 7px yellow;}
+50%{box-shadow:3px 3px 7px green;}
+75%{box-shadow:3px 3px 7px orange;}
+100%{box-shadow:3px 3px 7px blue;}
+
+}
+
+table{
+background-color:rgba(255,255,240,0.95);
+}
+
+th{
+background-color:bisque;
+}
+
+/* redes */
+
+#redes ul{
+list-style:none;
+padding:0;
+margin:0;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+}
+
+#redes li a{
+text-decoration:none;
+color:#333;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* cores redes */
+
+#whatsapp{color:green;}
+#facebook{color:blue;}
+#instagram{color:orange;}
+#linkedin{color:cadetblue;}
+#tiktok{color:black;}
+#telegram{color:blue;}
+#youtube{color:brown;}
+
+h3{
+font-family:cursive;
+}
+
+/* menu */
+
+.menu{
+background-color:rgba(0,0,0,0.521);
+background-image:linear-gradient(to right, blue, rgba(0,0,0,0));
+text-align:center;
+}
+
+.menu ul li{
+display:inline-block;
+width:100px;
+text-align:center;
+margin:10px;
+}
+
+.menu ul li a{
+color:rgba(37,16,114,0.87);
+text-decoration:none;
+}
+
+/* botão menu */
+
+.menuicone{
+display:none;
+cursor:pointer;
+}
+
+/* celular */
+
+@media(max-width:1050px){
+
+.menuicone{
+display:block;
+color:white;
+text-align:left;
+font-size:18px;
+padding:10px;
+}
+
+.menu ul{
+display:none;
+padding:0;
+}
+
+.menu ul li{
+display:block;
+width:100%;
+}
+
+.menu ul.mostrarmenu{
+display:block;
+}
+
+}

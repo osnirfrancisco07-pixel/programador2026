@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu e Rodapé com Ícones e Informações</title>
+    <!-- Link para Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Estilo do menu */
+        nav {
+            background-color: #2b0a0a4b;
+            padding: 10px;
+            text-align:left;
+        }
+        nav a {
+            color: rgba(42, 146, 77, 0.911);
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #555;
+            border-radius: 800px;
+            display: inline-block;
+            transition:0.3s;
+        }
+        nav a:hover {
+            background-color: #5f501dc7;
+        }
+        nav a i {
+            margin-right: 9px;
+        }
+
+        /* Conteúdo principal */
+        main {
+            padding: 20px;
+            min-height: 40px; /* Garante espaço antes do rodapé */
+        }
+
+        /* Rodapé fixo */
+        footer {
+            background-color: #2a3d9294;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 14px;
+            
+        }
+        footer i {
+            margin: 0 8px;
+        }
+        .social {
+            margin-bottom: 8px;
+        }
+        .senac-info {
+            margin-bottom: 5px;
+            font-weight: bold;
+             {text-indent: 3px;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav>
+        <a href="#home"><i class="fas fa-home"></i>Início</a>
+        <a href="#sobre"><i class="fas fa-info-circle"></i>Sobre</a>
+        <a href="#contato"><i class="fas fa-envelope"></i>Contato</a>
+    </nav>
+
+    <!-- Conteúdo -->
+    <main>
+        <h1> O que você não sabe sobre Senac</h1>
+      <p> O Senac foi criado em 10 de janeiro de 1946 pela Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC), por meio do decreto-lei 8.621. A partir do ano seguinte, o Senac passou a desenvolver um trabalho até então inovador no país:oferecer, em larga escala, educação profissional destinada à formação e preparação de trabalhadores para o comércio.
+
+Na mesma data de sua criação, também foi promulgado o decreto-lei 8.622, que dispõe sobre a atuação da Instituição na aprendizagem comercial. Até hoje, a aprendizagem é uma das principais ações do Senac.
+
+Sempre à frente em assuntos educacionais, o Senac promoveu, ainda na década de 1940, o ensino a distância, mais notadamente com os cursos da Universidade do Ar. Entre as inovações promovidas pelo Senac na educação profissional, também se destacam as empresas pedagógicas (ou empresas-escola), principalmente a partir da década de 1960. O trunfo dessas empresas é a possibilidade de os alunos vivenciarem o trabalho em ambiente próprio. Ainda hoje, essas empresas são destaques da ação do Senac, como os hotéis-escola e os restaurantes-escola.
+
+Também datam da década de 1940 as primeiras ações de levar a educação profissional aos locais mais distantes dos grandes centros e que não dispunham de estabelecimentos do Senac. Por meio de cursos volantes e, posteriormente, de unidades móveis, o Senac se tornou um pioneiro naeducação sobre rodas.
+
+Na década de 1990, a informação e a produção de novos conhecimentos ganharam destaque na agenda das ações do Senac. A Instituição passou a produzir livros, vídeos esoftwares, voltados para as áreas de atuação do Senac. Nesse período, também foi criada a TV Senac (posteriormente Rede Sesc-Senac de Televisão e, hoje, Sesc TV), com uma programação voltada para assuntos de cultura e lazer.
+
+Aliando a tecnologia à disseminação de conhecimento, no início dos anos 2000, surgia a Rede Sesc-Senac de Teleconferência, promovendo debates sobre assuntos relevantes entre especialistas e o público, em tempo real, por e-mail, fax e telefone. Hoje, a Rede está presente em todos os estados, com cerca de 400 salas e auditórios equipados com infraestrutura de ponta.Outro uso da mídia foi a criação do programa radiofônico Espaço Senac, que, desde 2002, foi ampliado para o programa Sintonia Sesc-Senac, transmitido, hoje, por cerca de mil emissoras no Brasil.
+
+O ensino a distância também recebeu impulso na década de 1990, com a criação de um centro nacional específico, com o objetivo de ampliar e diversificar a programação do Senac nesse tipo de ensino. Como resultado desse empenho em EAD, o Ministério da Educação, em 2004, concedeu um credenciamento especial para o Senac oferecer cursos de pós-graduação lato sensu a distância. Para atender à demanda, foi criada a Rede EAD Senac.
+
+Em apenas seis décadas de trabalho, o Senac fez muito, como comprova o número de mais de 53 milhões de atendimentos. A história do Senac e dos milhões de brasileiros que vêm conquistando uma vida melhor por meio dos cursos e atividades da Instituição ainda continua a ser escrita. E sempre com a perspectiva de um final feliz.
+<img src="image.png" alt="Descrição da imagem" width="700" height="420">
+ </h2></p>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="senac-info">
+            
+        </div>
+        <div class="social">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        &copy;Senac-2026 - Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* Reset básico da página */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header com Flexbox */
+header {
+    background-color: #273f85;
+    color: white;
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: greenyellow;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.melhoresdestinos.com.br/wp-content/uploads/2021/07/cataratas-do-iguacu-00005.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 20px;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    color: rgba(10, 10, 10, 0.932);
+    margin-bottom: 10px;
+}
+
+#hero p {
+    color: #0401a1ea;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: rgba(68, 235, 46, 0.9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(114, 14, 14, 0.466);
+    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Seção Sobre com fundo colorido */
+#sobre {
+    padding: 60px 10%;
+    text-align: center;
+    line-height: 1.6;
+    border-radius: 10px;
+    background-color: #cce7ff; /* cor de fundo azul claro */
+    
+    /* Reset básico da página */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header com Flexbox */
+header {
+    background-color: #273f85;
+    color: white;
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    background-color: greenyellow;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.melhoresdestinos.com.br/wp-content/uploads/2021/07/cataratas-do-iguacu-00005.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 20px;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    color: rgba(10, 10, 10, 0.932);
+    margin-bottom: 10px;
+}
+
+#hero p {
+    color: #59166dea;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: rgba(68, 235, 46, 0.9);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(114, 14, 14, 0.466);
+    box-shadow: 2px 2px 7px 3px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Seção Sobre com fundo colorido */
+#sobre {
+    padding: 60px 10%;
+    text-align: center;
+    line-height: 1.6;
+    border-radius: 10px;
+    background-color: #cce7ff; /* cor de fundo azul claro */
+}
+
+#sobre h2 {
+    font-size: 2rem;
+    color: rgb(76, 0, 255);
+    margin-bottom: 20px;
+
+
+    background-image: url(); /* substitua pelo link da sua imagem */
+    background-size: cover;       /* cobre toda a área da seção */
+    background-position: center;  /* centraliza a imagem */
+    background-repeat: no-repeat; /* não repete a imagem */
+}
+
+#sobre p {
+    color: #333333d0;
+}
+
+/
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+}
+
+#sobre h2 {
+    background-color: #2927854b;
+    font-size: 2rem;
+    color: green;
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    color: #333333d0;
+
+}
+h3{color: green;
+background-color:#2927854b }
+/* Ícones sociais */
+
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espaço entre ícones */
+    margin: 20px 0;
+}
+
+.social-icons a {
+    
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: rgba(49, 14, 14, 0.808);
+    font-size: 1.5rem;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Exemplo de cores por rede social */
+.social-icons a.facebook { background-color: #4267B2; }
+.social-icons a.instagram { background-color: #E1306C; }
+.social-icons a.twitter { background-color: #1DA1F2; }
+.social-icons a.youtube { background-color: #FF0000; }
+
+    transform: scale(1.2);
+    opacity: 0.9;
+
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
