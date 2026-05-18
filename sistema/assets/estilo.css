@@ -17,3 +17,54 @@
     border-radius:20px;
     box-shadow:2px 2px 10px  gray !important;
 }
+
+.corbarra{
+    background-color:rgb(31, 110, 42);
+    color:white !important;
+}
+body{
+    margin:0;
+    padding: 0;
+}
+
+.sidebar{
+    width: 200px;
+    min-height: 100vh;
+
+}
+
+
+
+.sidebar .nav-link{
+    color: rgb(218, 231, 220);
+    transition:0,3s;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.sidebar .nav-link:hover{
+    background: #477053;
+}
+@media(max-width:1200px){
+    .sidebar{
+        position:fixed;
+        top: 0;
+        left:-260px;
+        z-index: 1000;
+    }
+
+.escurecer{
+    display:none;
+    position:fixed;
+    inset:0;
+    background: rgb(0,0,0,0.4);
+ z-index: 1000;
+}
+
+.escurecer.show{
+    display: block;
+}
+.sidebar.show{
+    left: 0;
+}
+}
