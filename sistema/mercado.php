@@ -3,19 +3,19 @@
   include './backend/validacao.php';
 
   //destino que o formulário enviará os dados
-  $destino = "./backend/usuario/inserir.php";
+  $destino = "./backend/mercado/inserir.php";
   
   //no caso de estar havendo alguma edição
   //carregará os dados do formulário e mandará para o arquivo alterar
   //Se for diferente de vazio o id
   if(!empty($_GET['id'])){
     $id = $_GET['id'];
-    $sql = "SELECT * FROM usuario WHERE id='$id' ";
+    $sql = "SELECT * FROM mercado WHERE id='$id' ";
     //executar sql
     $dados = mysqli_query($conexao, $sql);
-    $usuarios = mysqli_fetch_assoc($dados);
+    $mercados = mysqli_fetch_assoc($dados);
     //destino será alterado, para o caminho do alterar
-    $destino = "./backend/usuario/alterar.php";
+    $destino = "./backend/mercado/alterar.php";
   }
 ?>
 
@@ -31,13 +31,13 @@
      <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css" />
 </head>
   <body>
- <?php include'./modulos/menu_superior.php'?>   
- 
+   <?php include './modulos/menu_superior.php'?> 
+
 <div id="escurecer" class="escurecer" onclick="abrirmenu()"></div>
  <div class="container-fluid">
   <div class="row">
   <div class="col-md-2 bg-dark">
- <?php include'./modulos/menu_lateral.php';?>
+<?php include './modulos/menu_lateral.php'?>
   </div>
   <div class="col-md-5">
     <h3>Cadastro</h3>
@@ -46,24 +46,45 @@
                 <h3> <i class="fa-solid fa-circle-plus"></i> Cadastro </h3>
                  <div class="mb-3">
                     <label class="form-label"> id </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['id'] : "" ?>" type="text" name="id" class="form-control" readonly>
+                    <input value="<?php echo isset($mercados) ? $mercados['id'] : "" ?>" type="text" name="id" class="form-control" readonly>
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Nome </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['nome'] : "" ?>" type="text" name="nome" class="form-control">
+                    <input value="<?php echo isset($mercados) ? $mercados['nome'] : "" ?>" type="text" name="nome" class="form-control">
                 </div>
                  <div class="mb-3">
-                    <label class="form-label"> Cpf </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['cpf'] : "" ?>" type="text" name="cpf" class="form-control">
+                    <label class="form-label"> Cnpj </label>
+                    <input value="<?php echo isset($mercados) ? $mercados['cnpj'] : "" ?>" type="text" name="cnpj" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label"> Email </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['email'] : "" ?>" type="email" name="email" class="form-control">
+                    <label class="form-label"> endereco </label>
+                    <input value="<?php echo isset($mercados) ? $mercados['endereco'] : "" ?>" type="text"="endereco" name="endereco" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Senha </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['senha'] : "" ?>" type="password" name="senha" class="form-control">
+                    <input value="<?php echo isset($mercados) ? $mercados['senha'] : "" ?>" type="password" name="senha" class="form-control">
                 </div>
+                  <div class="mb-3">
+                    <label class="form-label">email</label>
+                    <input value="<?php echo isset($mercados) ? $mercados['email'] : "" ?>" type="text" name="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">telefone</label>
+                    <input value="<?php echo isset($mercados) ? $mercados['telefone'] : "" ?>" type="text" name="telefone" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">foto</label>
+                    <input value="<?php echo isset($mercados) ? $mercados['foto'] : "" ?>" type="text" name="foto" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">mapa</label>
+                    <input value="<?php echo isset($mercados) ? $mercados['mapa'] : "" ?>" type="text" name="mapa" class="form-control">
+                </div>
+
+
+
+
+
                 <button type="submit" class="btn btn-primary"> Cadastrar </button>
                 <button type="reset" class="btn btn-secondary"> Limpar </button>
             </form>
@@ -81,7 +102,7 @@
   </thead>
   <tbody>
     <?php
-    $sql ='select * from usuario';
+    $sql ='select * from mercado';
     $dados =mysqli_query($conexao,$sql);
     //percorrer todos os registros banco
     while($coluna =mysqli_fetch_assoc($dados)){
@@ -91,8 +112,8 @@
       <td><?php echo $coluna['nome'] ?></td>
       <td><?php echo $coluna['email']?></td>
       <td>
-         <a href="./principal.php?id=<?=$coluna['id']?>"> <i class="fa-solid fa-pen-to-square" style="color: rgb(1, 92, 164);"></i> </a> 
-         <a href="<?php echo './backend/usuario/excluir.php?id='.$coluna['id'] ?>" onclick="return confirm('Deseja realmente excluir?')"> <i class="fa-solid fa-trash" style="color: rgb(255, 0, 0);"></i> </a> 
+         <a href="./mercado.php?id=<?=$coluna['id']?>"> <i class="fa-solid fa-pen-to-square" style="color: rgb(1, 92, 164);"></i> </a> 
+         <a href="<?php echo './backend/mercado/excluir.php?id='.$coluna['id'] ?>" onclick="return confirm('Deseja realmente excluir?')"> <i class="fa-solid fa-trash" style="color: rgb(255, 0, 0);"></i> </a> 
       </td>
     
     </tr> 
