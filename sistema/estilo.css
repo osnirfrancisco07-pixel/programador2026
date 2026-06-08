@@ -1,3 +1,156 @@
-.fundoazul{
-    background-color: rgb(250, 93, 1);
+:root {
+    --laranja: rgb(250, 93, 1);
+    --roxo: #330672;
+    --verde: #2f7d42;
+    --texto: #23212a;
+}
+
+body {
+    background: #f7f5f2;
+    color: var(--texto);
+}
+
+.fundoazul {
+    background-color: var(--laranja);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 700;
+}
+
+.navbar .btn {
+    border-radius: 999px;
+}
+
+.hero-carousel img {
+    height: clamp(260px, 40vw, 520px);
+    object-fit: cover;
+}
+
+.section-roxa {
+    background-color: var(--roxo);
+    color: #fff;
+    padding: 56px 0;
+}
+
+.public-card {
+    border: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(30, 24, 45, .12);
+    height: 100%;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.public-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(30, 24, 45, .18);
+}
+
+.public-card img {
+    height: 190px;
+    object-fit: cover;
+}
+
+.public-card .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-ecolote {
+    background: var(--laranja);
+    border: 0;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+.btn-ecolote:hover {
+    background: #d84e00;
+    color: #fff;
+}
+
+.stats-bar {
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(31, 22, 43, .12);
+    padding: 18px;
+    text-align: center;
+}
+
+.stat-item strong {
+    color: var(--roxo);
+    display: block;
+    font-size: 1.6rem;
+}
+
+.mercado-banner {
+    min-height: 330px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+
+.mercado-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.72));
+}
+
+.mercado-banner .container {
+    position: relative;
+    color: #fff;
+    padding-bottom: 42px;
+}
+
+.info-band {
+    background: var(--roxo);
+    color: #fff;
+    padding: 28px 0;
+}
+
+.info-pill {
+    background: rgba(255,255,255,.12);
+    border-radius: 8px;
+    padding: 14px;
+    height: 100%;
+}
+
+.mapa-box iframe {
+    width: 100%;
+    min-height: 260px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.recipe-list {
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+    padding-top: 12px;
+}
+
+.recipe-list img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.footer-public {
+    background: #20152f;
+    color: #fff;
+    margin-top: 56px;
+    padding: 28px 0;
 }

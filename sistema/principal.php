@@ -54,7 +54,7 @@
                 </div>
                  <div class="mb-3">
                     <label class="form-label"> Cpf </label>
-                    <input value="<?php echo isset($usuarios) ? $usuarios['cpf'] : "" ?>" type="text" name="cpf" class="form-control">
+                    <input value="<?php echo isset($usuarios) ? $usuarios['cpf'] : "" ?>" type="text" name="cpf" class="form-control mascara-cpf">
                 </div>
                 <div class="mb-3">
                     <label class="form-label"> Email </label>

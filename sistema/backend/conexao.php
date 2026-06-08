@@ -1,16 +1,12 @@
 <?php
-    $endereco = "localhost";
-    $nome = "ecolote";
-    $usuario = "root";
-    $senha = "";
+$endereco = "localhost";
+$nome = "ecolote";
+$usuario = "root";
+$senha = "";
 
-    $conexao = mysqli_connect($endereco, $usuario, $senha, $nome);
+$conexao = mysqli_connect($endereco, $usuario, $senha, $nome);
 
-    //se houver algum erro
-    if(!$conexao){
-        echo "Erro na conexão";
-    }else {
-        echo "Parabéns, conectou!";
-    }
-
+if (!$conexao) {
+    die("Erro na conexao");
+}
 ?>

@@ -1,20 +1,19 @@
-<?php 
-include'../conexao.php';
-//receber os dados dos nomes do frontend
-$nome= $_REQUEST['nome'];
-$email= $_REQUEST['email'];
-$cnpj= $_REQUEST['cnpj'];
-$senha= $_REQUEST['senha'];
-$endereco= $_REQUEST['endereco'];
-$telefone= $_REQUEST['telefone'];
-$foto= $_REQUEST['foto'];
-$mapa= $_REQUEST['mapa'];                                                                                                                                                                                                             ['senha'];
+<?php
+include '../conexao.php';
+include '../funcoes.php';
 
-//inserção em sql-linguagem do banco
-$sql="insert into mercado (nome,email,cnpj,senha,endereco,telefone,foto,mapa) values ('$nome','$email','$cnpj','$senha','$endereco','$telefone','$foto','$mapa')";
-//executar
-$resultado= mysqli_query($conexao,$sql);
-//atualizar pagina
-header('location:../../mercado.php');
+$nome = $_POST['nome'] ?? '';
+$email = $_POST['email'] ?? '';
+$cnpj = $_POST['cnpj'] ?? '';
+$senha = $_POST['senha'] ?? '';
+$endereco = $_POST['endereco'] ?? '';
+$telefone = $_POST['telefone'] ?? '';
+$foto = salvar_upload('foto', 'mercados');
+$mapa = $_POST['mapa'] ?? '';
 
+$sql = "INSERT INTO mercado (nome,email,cnpj,senha,endereco,telefone,foto,mapa) VALUES ('$nome','$email','$cnpj','$senha','$endereco','$telefone','$foto','$mapa')";
+mysqli_query($conexao, $sql);
+
+header('Location:../../mercado.php');
+exit;
 ?>

@@ -1,91 +1,110 @@
-<<<<<<< HEAD
-.corpologin{
-
-    display:flex;
-    align-items:center;         /*alinhar acima abaixo*/
-    justify-content:center;     /*alinhar esquerda direita*/
-    height:100vh;               /*o tamanho do fundo é o tamanho da tela*/
-}
-
-.painel{
-    position:absolute;  /*posição de camadas*/
-    z-index:1;   /*posicionar camada a frente*/
-    width:80%;
-
-}
-.telalogin{
-    background-color: rgba(213, 200, 241, 0.945);
-    border-radius:20px;
-    box-shadow:2px 2px 10px  gray !important;
-}
-
-.corbarra{
-    background-color:rgb(31, 110, 42);
-    color:white !important;
-}
-body{
-    margin:0;
-    padding: 0;
-}
-
-.sidebar{
-    width: 200px;
+.corpologin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
-
 }
 
+.painel {
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+}
 
+.telalogin {
+    background-color: rgba(213, 200, 241, 0.945);
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px gray !important;
+}
 
-.sidebar .nav-link{
+.corbarra {
+    background-color: rgb(31, 110, 42);
+    color: white !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f6f7fb;
+}
+
+.sidebar {
+    width: 100%;
+    min-height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+    position: sticky;
+    top: 56px;
+}
+
+.sidebar h4,
+.sidebar h5 {
+    word-break: break-word;
+}
+
+.sidebar .nav-link {
     color: rgb(218, 231, 220);
-    transition:0,3s;
+    transition: .3s;
     margin-bottom: 5px;
     border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
-.sidebar .nav-link:hover{
+.sidebar .nav-link:hover {
     background: #477053;
 }
-@media(max-width:1200px){
-    .sidebar{
-        position:fixed;
+
+.admin-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(31, 32, 36, .08);
+}
+
+.img-preview {
+    width: 130px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.thumb-table {
+    width: 56px;
+    height: 44px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.escurecer {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        position: fixed;
         top: 0;
-        left:-260px;
+        left: -260px;
+        width: 240px;
+        min-height: 100vh;
+        max-height: 100vh;
+        z-index: 1001;
+        transition: left .25s ease;
+    }
+
+    .escurecer {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .4);
         z-index: 1000;
     }
 
-.escurecer{
-    display:none;
-    position:fixed;
-    inset:0;
-    background: rgb(0,0,0,0.4);
- z-index: 1000;
-}
+    .escurecer.show {
+        display: block;
+    }
 
-.escurecer.show{
-    display: block;
-}
-.sidebar.show{
-    left: 0;
-}
-=======
-.corpologin{
-
-    display:flex;
-    align-items:center;         /*alinhar acima abaixo*/
-    justify-content:center;     /*alinhar esquerda direita*/
-    height:100vh;               /*o tamanho do fundo é o tamanho da tela*/
-}
-
-.painel{
-    position:absolute;  /*posição de camadas*/
-    z-index:1;   /*posicionar camada a frente*/
-    width:80%;
-
-}
-.telalogin{
-    background-color: rgba(213, 200, 241, 0.945);
-    border-radius:20px;
-    box-shadow:2px 2px 10px  gray !important;
->>>>>>> b1311eeabd601071063d81cae31907e6ed9317cb
+    .sidebar.show {
+        left: 0;
+    }
 }

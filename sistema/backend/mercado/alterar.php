@@ -1,24 +1,21 @@
 <?php
-
-//importando o banco
 include '../conexao.php';
+include '../funcoes.php';
 
-//receber dados do frontend
-$id= $_REQUEST['id'];
-$nome= $_REQUEST['nome'];
-$email= $_REQUEST['email'];
-$cnpj= $_REQUEST['cnpj'];
-$senha= $_REQUEST['senha'];
-$endereco= $_REQUEST['endereco'];
-$telefone= $_REQUEST['telefone'];
-$foto= $_REQUEST['foto'];
-$mapa= $_REQUEST['mapa'];  
+$id = $_POST['id'] ?? '';
+$nome = $_POST['nome'] ?? '';
+$email = $_POST['email'] ?? '';
+$cnpj = $_POST['cnpj'] ?? '';
+$senha = $_POST['senha'] ?? '';
+$endereco = $_POST['endereco'] ?? '';
+$telefone = $_POST['telefone'] ?? '';
+$fotoAtual = $_POST['foto_atual'] ?? '';
+$foto = salvar_upload('foto', 'mercados', $fotoAtual);
+$mapa = $_POST['mapa'] ?? '';
 
-$sql = "UPDATE mercado SET nome='$nome',email='$email',cnpj='$cnpj',senha='$senha',endereco='$endereco',telefone='$telefone',foto='$foto',mapa='$mapa'where id='$id'";
-//executar
-
-$resultado = mysqli_query($conexao, $sql);
+$sql = "UPDATE mercado SET nome='$nome', email='$email', cnpj='$cnpj', senha='$senha', endereco='$endereco', telefone='$telefone', foto='$foto', mapa='$mapa' WHERE id='$id'";
+mysqli_query($conexao, $sql);
 
 header('Location:../../mercado.php');
-
+exit;
 ?>

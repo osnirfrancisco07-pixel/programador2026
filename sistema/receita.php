@@ -2,14 +2,14 @@
 include './backend/conexao.php';
 include './backend/validacao.php';
 
-$destino = './backend/mercado/inserir.php';
-$mercados = null;
+$destino = './backend/receita/inserir.php';
+$receita = null;
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
-    $dados = mysqli_query($conexao, "SELECT * FROM mercado WHERE id='$id'");
-    $mercados = mysqli_fetch_assoc($dados);
-    $destino = './backend/mercado/alterar.php';
+    $dados = mysqli_query($conexao, "SELECT * FROM receita WHERE id='$id'");
+    $receita = mysqli_fetch_assoc($dados);
+    $destino = './backend/receita/alterar.php';
 }
 ?>
 <!doctype html>
@@ -17,7 +17,7 @@ if (!empty($_GET['id'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mercados - Ecolote</title>
+    <title>Receitas - Ecolote</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -33,43 +33,23 @@ if (!empty($_GET['id'])) {
         </div>
         <div class="col-md-5">
             <form action="<?= $destino ?>" method="post" enctype="multipart/form-data" class="p-3">
-                <h3><i class="fa-solid fa-circle-plus"></i> Cadastro</h3>
-                <input value="<?= $mercados['id'] ?? '' ?>" type="hidden" name="id">
-                <input value="<?= $mercados['foto'] ?? '' ?>" type="hidden" name="foto_atual">
+                <h3><i class="fa-solid fa-utensils"></i> Receita</h3>
+                <input value="<?= $receita['id'] ?? '' ?>" type="hidden" name="id">
+                <input value="<?= $receita['foto'] ?? '' ?>" type="hidden" name="foto_atual">
                 <div class="mb-3">
-                    <label class="form-label">Nome</label>
-                    <input value="<?= $mercados['nome'] ?? '' ?>" type="text" name="nome" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">CNPJ</label>
-                    <input value="<?= $mercados['cnpj'] ?? '' ?>" type="text" name="cnpj" class="form-control mascara-cnpj">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Endereco</label>
-                    <input value="<?= $mercados['endereco'] ?? '' ?>" type="text" name="endereco" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Senha</label>
-                    <input value="<?= $mercados['senha'] ?? '' ?>" type="password" name="senha" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input value="<?= $mercados['email'] ?? '' ?>" type="email" name="email" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Telefone</label>
-                    <input value="<?= $mercados['telefone'] ?? '' ?>" type="text" name="telefone" class="form-control mascara-telefone">
+                    <label class="form-label">Nome da receita</label>
+                    <input value="<?= $receita['nome'] ?? '' ?>" type="text" name="nome" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Foto</label>
                     <input type="file" name="foto" class="form-control" accept="image/*">
-                    <?php if (!empty($mercados['foto'])) { ?>
-                        <img src="<?= $mercados['foto'] ?>" class="img-preview mt-2" alt="Foto do mercado">
+                    <?php if (!empty($receita['foto'])) { ?>
+                        <img src="<?= $receita['foto'] ?>" class="img-preview mt-2" alt="Foto da receita">
                     <?php } ?>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Mapa</label>
-                    <input value="<?= $mercados['mapa'] ?? '' ?>" type="text" name="mapa" class="form-control" placeholder="Link ou iframe do Google Maps">
+                    <label class="form-label">Descricao</label>
+                    <textarea name="descricao" class="form-control" rows="6"><?= $receita['descricao'] ?? '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Salvar</button>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
@@ -83,22 +63,26 @@ if (!empty($_GET['id'])) {
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Email</th>
+                    <th>Foto</th>
                     <th>Opcoes</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-                $dados = mysqli_query($conexao, 'SELECT * FROM mercado ORDER BY nome');
+                $dados = mysqli_query($conexao, 'SELECT * FROM receita ORDER BY nome');
                 while ($coluna = mysqli_fetch_assoc($dados)) {
                     ?>
                     <tr>
                         <th><?= $coluna['id'] ?></th>
                         <td><?= $coluna['nome'] ?></td>
-                        <td><?= $coluna['email'] ?></td>
                         <td>
-                            <a href="./mercado.php?id=<?= $coluna['id'] ?>"><i class="fa-solid fa-pen-to-square" style="color: rgb(1, 92, 164);"></i></a>
-                            <a href="./backend/mercado/excluir.php?id=<?= $coluna['id'] ?>" onclick="return confirm('Deseja realmente excluir?')"><i class="fa-solid fa-trash" style="color: rgb(255, 0, 0);"></i></a>
+                            <?php if (!empty($coluna['foto'])) { ?>
+                                <img src="<?= $coluna['foto'] ?>" class="thumb-table" alt="Receita">
+                            <?php } ?>
+                        </td>
+                        <td>
+                            <a href="./receita.php?id=<?= $coluna['id'] ?>"><i class="fa-solid fa-pen-to-square" style="color: rgb(1, 92, 164);"></i></a>
+                            <a href="./backend/receita/excluir.php?id=<?= $coluna['id'] ?>" onclick="return confirm('Deseja realmente excluir?')"><i class="fa-solid fa-trash" style="color: rgb(255, 0, 0);"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
