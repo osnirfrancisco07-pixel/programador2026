@@ -1,3 +1,22 @@
+<?php
+include './backend/conexao.php' ;
+//pegar o id do mercado tranportado pela url
+ $id =$_GET['id'] ??0;
+//buscar somente produtos deste mercado especifico
+$dadosMercado = mysqli_query($conexao,"SELECT * FROM mercado WHERE id='$id'");
+$mercado =mysqli_fetch_assoc($dadosMercado);
+
+//se o mercado nao existir
+if(!$mercado){
+  echo "Mercado não encontrado!";
+  exit;
+}
+//buscar produtos deste mercado especifico
+$produtos = mysqli_query($conexao , "SELECT * FROM produto WHERE mercado_id='$id' ORDER BY nome");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -51,69 +70,21 @@
 <br>
  <div class="container">
  <div class="row">
+
+ <?php while ($produto= mysqli_fetch_assoc($produtos)){ ?>
   <div class="col-12 col-sm-6 col-lg-3  mt-4 d-flex justify-content-center">
    <div class="card" style="width: 18rem;">
-  <img src="imagem/mercadinho2.png" class="card-img-top" alt="...">
+  <img src="<?=$produto['imagem']?>" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">mercadinho da vovó</h5>
-    <p class="card-text">o maior , o gigante em simplicidade e qualidade</p>
+    <h5 class="card-title"> <?=$produto['nome'] ?></h5>
+    <p class="card-text"> <?=$produto['preco'] ?></p>
 
     </p>
     <a href="#" class="btn btn-primary">acessar</a>
   </div>
 </div>
   </div>
-
-  <div class="col-12 col-sm-6 col-lg-3  mt-4 d-flex justify-content-center">
-   <div class="card" style="width: 18rem;">
-  <img src="imagem/mercadinho2.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">mercadinho da vovó</h5>
-    <p class="card-text">o maior , o gigante em simplicidade e qualidade</p>
-
-    </p>
-    <a href="#" class="btn btn-primary">acessar</a>
-  </div>
-</div>
-  </div>
-
-  <div class="col-12 col-sm-6 col-lg-3  mt-4 d-flex justify-content-center">
-   <div class="card" style="width: 18rem;">
-  <img src="imagem/mercadinho2.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">mercadinho da vovó</h5>
-    <p class="card-text">o maior , o gigante em simplicidade e qualidade</p>
-
-    </p>
-    <a href="#" class="btn btn-primary">acessar</a>
-  </div>
-</div>
-  </div>
-
-  <div class="col-12 col-sm-6 col-lg-3  mt-4 d-flex justify-content-center">
-   <div class="card" style="width: 18rem;">
-  <img src="imagem/mercadinho2.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">mercadinho da vovó</h5>
-    <p class="card-text">o maior , o gigante em simplicidade e qualidade</p>
-
-    </p>
-    <a href="#" class="btn btn-primary">acessar</a>
-  </div>
-</div>
-  </div>
-
-  <div class="col-12 col-sm-6 col-lg-3  mt-4 d-flex justify-content-center">
-   <div class="card" style="width: 18rem;">
-  <img src="imagem/mercadinho2.png" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">mercadinho da vovó</h5>
-    <p class="card-text">o maior , o gigante em simplicidade e qualidade</p>
-
-    </p>
-    <a href="#" class="btn btn-primary">acessar</a>
-  </div>
-</div>
+ <?php } ?>
   </div>
 </div>
 </div>
